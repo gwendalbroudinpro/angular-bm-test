@@ -15,6 +15,8 @@ import { STEPPER_GLOBAL_OPTIONS } from "@angular/cdk/stepper";
 import { MatFileUploadModule } from "mat-file-upload";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatCardModule } from "@angular/material/card";
+import { MatStepperModule } from "@angular/material/stepper";
+import { MatIconModule } from "@angular/material/icon";
 
 // Default MatFormField appearance to 'fill' as that is the new recommended approach and the
 // `legacy` and `standard` appearances are scheduled for deprecation in version 10.
@@ -30,7 +32,9 @@ import { MatCardModule } from "@angular/material/card";
     MatNativeDateModule,
     ReactiveFormsModule,
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    MatStepperModule,
+    MatIconModule
   ],
   entryComponents: [StepperOverviewExample],
   declarations: [StepperOverviewExample],

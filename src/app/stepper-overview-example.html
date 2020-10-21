@@ -65,57 +65,82 @@
 						</mat-select>
 					</mat-form-field>
 					<mat-form-field appearance="fill">
-						<mat-label>INCOTERM</mat-label>
+						<mat-label>PLACE OF INCOTERM</mat-label>
 						<mat-select [disabled]="true" value="option1">
-							<mat-option value="option1">PORT DU</mat-option>
+							<mat-option value="option1">FR Paris S W</mat-option>
 						</mat-select>
 					</mat-form-field>
 					<mat-form-field appearance="fill">
-						<mat-label>INCOTERM</mat-label>
+						<mat-label>SOURCING ZONE</mat-label>
 						<mat-select [disabled]="true" value="option1">
-							<mat-option value="option1">PORT DU</mat-option>
+							<mat-option value="option1">Europe Without France</mat-option>
 						</mat-select>
 					</mat-form-field>
 					<mat-form-field appearance="fill">
-						<mat-label>INCOTERM</mat-label>
+						<mat-label>PACKAGING</mat-label>
 						<mat-select [disabled]="true" value="option1">
-							<mat-option value="option1">PORT DU</mat-option>
+							<mat-option value="option1">Flat Packed</mat-option>
 						</mat-select>
 					</mat-form-field>
 					<mat-form-field appearance="fill">
-						<mat-label>INCOTERM</mat-label>
+						<mat-label>MAIN PRODUCTION COUNTRY</mat-label>
 						<mat-select [disabled]="true" value="option1">
-							<mat-option value="option1">PORT DU</mat-option>
+							<mat-option value="option1">ITALY</mat-option>
 						</mat-select>
 					</mat-form-field>
 				</div>
 				<div class="column">
 					<mat-form-field appearance="fill">
-						<mat-label>INCOTERM</mat-label>
+						<mat-label>PAYMENT METHOD</mat-label>
 						<mat-select [disabled]="true" value="option1">
-							<mat-option value="option1">PORT DU</mat-option>
+							<mat-option value="option1">60 days time of delivery</mat-option>
 						</mat-select>
 					</mat-form-field>
 					<mat-form-field appearance="fill">
-						<mat-label>INCOTERM</mat-label>
+						<mat-label>PAYMENT METHOD</mat-label>
 						<mat-select [disabled]="true" value="option1">
-							<mat-option value="option1">PORT DU</mat-option>
+							<mat-option value="option1">Transfer Europe</mat-option>
 						</mat-select>
 					</mat-form-field>
 					<mat-form-field appearance="fill">
-						<mat-label>INCOTERM</mat-label>
+						<mat-label>CURRENCY</mat-label>
 						<mat-select [disabled]="true" value="option1">
-							<mat-option value="option1">PORT DU</mat-option>
+							<mat-option value="option1">EUR</mat-option>
 						</mat-select>
 					</mat-form-field>
 					<mat-form-field appearance="fill">
-						<mat-label>INCOTERM</mat-label>
+						<mat-label>COUNTRY OF BANK ACCOUNT</mat-label>
 						<mat-select [disabled]="true" value="option1">
-							<mat-option value="option1">PORT DU</mat-option>
+							<mat-option value="option1">Matrix Country</mat-option>
 						</mat-select>
 					</mat-form-field>
 				</div>
 			</div>
+		</mat-card>
+
+		<mat-card class="main-form">
+			<h3>CREATIVE / INDUSTRIAL</h3>
+			<mat-form-field appearance="fill">
+				<mat-select [disabled]="true" value="option1">
+					<mat-option value="option1">Creative</mat-option>
+				</mat-select>
+			</mat-form-field>
+		</mat-card>
+
+		<mat-card class="main-form">
+			<h3>SOURCING PARTNER</h3>
+			<mat-form-field appearance="fill">
+				<mat-label>BRAND AGENT / EBO NAME</mat-label>
+				<mat-select [disabled]="true" value="option1">
+					<mat-option value="option1">None</mat-option>
+				</mat-select>
+			</mat-form-field>
+			<mat-form-field appearance="fill">
+				<mat-label>SUPPLIER AGENT COMPAGNY NAME</mat-label>
+				<mat-select [disabled]="true" value="option1">
+					<mat-option value="option1">None</mat-option>
+				</mat-select>
+			</mat-form-field>
 		</mat-card>
 
 	</mat-step>
@@ -131,28 +156,32 @@
 		</ng-template>
 	</mat-step>
 	<mat-step state="Download Documents">
+		<p>Please Download the following document, fill it an upload it bellow</p>
+
+
 		<ng-template matStepLabel>
 			Download Documents
 		</ng-template>
 
-		<mat-file-upload></mat-file-upload>
+		<mat-file-upload [labelText]="'Upload your file here'" [uploadButtonText]="'Submit'">
+		</mat-file-upload>
 	</mat-step>
 
 	<mat-step>
 		<ng-template matStepLabel>Done</ng-template>
-		<p>You are now done.</p>
+		<mat-checkbox class="example-margin" [(ngModel)]="checked">I conficonfirm my informations are valid ?
+		</mat-checkbox>
+		<div>
+			<button mat-button (click)="stepper.reset()" *ngIf="checked">Send My Information</button>
+		</div>
 		<div>
 			<button mat-button matStepperPrevious>Back</button>
 			<button mat-button (click)="stepper.reset()">Reset</button>
 		</div>
+
 	</mat-step>
 
-	<ng-template matStepperIcon="firstFormGroup">
-		<mat-icon>face</mat-icon>
-	</ng-template>
-	<ng-template matStepperIcon="secondFormGroup">
-		<mat-icon>home</mat-icon>
-	</ng-template>
+
 </mat-horizontal-stepper>
 
 <!-- Copyright 2020 Google LLC. All Rights Reserved.
