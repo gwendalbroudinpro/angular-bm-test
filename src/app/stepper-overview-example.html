@@ -54,16 +54,40 @@
 			Company Profile
 		</ng-template>
 		<h2>Company Profile</h2>
-		<mat-form-field>
-			<mat-label>First Name</mat-label>
-			<input
+
+		<mat-card>
+			<h4> SUPPLIER ID : MALEX20001 </h4>
+			<h4> SUPPLIER NAME : ALEX 2000 SRL </h4>
+		</mat-card>
+		<mat-card>
+			<mat-form-field>
+				<mat-label>ADDRESS 1</mat-label>
+				<input
             matInput
-            placeholder="Eric"
-            formControlName="firstCtrl"
+            placeholder="VIA PRAMPOLINI 7"
             required
           />
-			<mat-error> First Name <strong>required</strong> </mat-error>
-		</mat-form-field>
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+      <mat-form-field>
+				<mat-label>ADDRESS 1</mat-label>
+				<input
+            matInput
+            placeholder="VIA PRAMPOLINI 7"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+      <mat-form-field>
+				<mat-label>ADDRESS 1</mat-label>
+				<input
+            matInput
+            placeholder="VIA PRAMPOLINI 7"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</mat-card>
 
 	</mat-step>
 	<mat-step state="Company contact">
