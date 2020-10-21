@@ -346,7 +346,7 @@
 		<mat-checkbox class="example-margin" [(ngModel)]="checked">I conficonfirm my informations are valid ?
 		</mat-checkbox>
 		<div>
-			<button mat-button (click)="stepper.reset()" *ngIf="checked">Send My Information</button>
+			<button mat-raised-button raised color="primary" (click)="stepper.reset()" *ngIf="checked">Send My Information</button>
 		</div>
 		<!-- <div>
 			<button mat-button matStepperPrevious>Back</button>
