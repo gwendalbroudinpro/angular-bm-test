@@ -15,6 +15,11 @@ export class StepperOverviewExample implements OnInit {
   secondFormGroup: FormGroup;
   finance: FormGroup;
   checked: boolean;
+  c1: boolean;
+  c2: boolean;
+  c3: boolean;
+  c4: boolean;
+  c5: boolean;
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {

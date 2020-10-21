@@ -13,6 +13,7 @@
 			<h4> SUPPLIER ID : MALEX20001 </h4>
 			<h4> SUPPLIER NAME : ALEX 2000 SRL </h4>
 		</mat-card>
+
 		<mat-card class="main-form">
 			<h3>HEAD OFFICE</h3>
 			<mat-form-field>
@@ -148,12 +149,185 @@
 		<ng-template matStepLabel>
 			Company contact
 		</ng-template>
+		<h2>Company contact</h2>
+
+		<mat-card class="main-form">
+			<h3>Administrative contact(s)</h3>
+			<mat-form-field>
+				<mat-label>email</mat-label>
+				<input
+            matInput
+            placeholder="example@domain.com"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</mat-card>
+
+		<mat-card class="main-form">
+			<h3>Financial contact(s)</h3>
+			<mat-form-field>
+				<mat-label>email</mat-label>
+				<input
+            matInput
+            placeholder="example@domain.com"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</mat-card>
+
+		<mat-card class="main-form">
+			<h3>PO contact(s)</h3>
+			<mat-form-field>
+				<mat-label>CCH email</mat-label>
+				<input
+            matInput
+            placeholder="example@domain.com"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-label>CCH email</mat-label>
+				<input
+            matInput
+            placeholder="example@domain.com"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-label>BNB email</mat-label>
+				<input
+            matInput
+            placeholder="example@domain.com"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-label>BRL email</mat-label>
+				<input
+            matInput
+            placeholder="example@domain.com"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-label>MGM email</mat-label>
+				<input
+            matInput
+            placeholder="example@domain.com"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+			<mat-form-field>
+				<mat-label>LHA email</mat-label>
+				<input
+            matInput
+            placeholder="example@domain.com"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</mat-card>
 
 	</mat-step>
-	<mat-step state="Compliance">
+	<mat-step state="Compliance" class="column">
 		<ng-template matStepLabel>
 			Compliance
 		</ng-template>
+		<h2>Compliance</h2>
+		<p>1.     Is your company’s main trading Bank Account located in a different country to its operations? </p>
+		<mat-radio-group [(ngModel)]="c1">
+			<mat-radio-button value="true">Yes</mat-radio-button>
+			<mat-radio-button value="false">No</mat-radio-button>
+		</mat-radio-group>
+		<div>
+			<mat-form-field *ngIf="c1 == 'true'">
+				<mat-label>Please explain</mat-label>
+				<input
+            matInput
+            placeholder="reason"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</div>
+
+		<p>2.     Is your company subject to regular financial audit by an independant auditor or certified public
+			accountant? </p>
+		<mat-radio-group [(ngModel)]="c2">
+			<mat-radio-button value="true">Yes</mat-radio-button>
+			<mat-radio-button value="false">No</mat-radio-button>
+		</mat-radio-group>
+		<div>
+			<mat-form-field *ngIf="c2 == 'true'">
+				<mat-label>Please explain</mat-label>
+				<input
+            matInput
+            placeholder="reason"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</div>
+
+		<p>3.     Does your company have a code of conduct or policy related to anti-bribery? </p>
+		<mat-radio-group [(ngModel)]="c3">
+			<mat-radio-button value="true">Yes</mat-radio-button>
+			<mat-radio-button value="false">No</mat-radio-button>
+		</mat-radio-group>
+		<div>
+			<mat-form-field *ngIf="c3 == 'true'">
+				<mat-label>Please explain</mat-label>
+				<input
+            matInput
+            placeholder="reason"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</div>
+
+		<p>4.     Does your company train its employee against anti-bribery / gift policy, etc.? </p>
+		<mat-radio-group [(ngModel)]="c4">
+			<mat-radio-button value="true">Yes</mat-radio-button>
+			<mat-radio-button value="false">No</mat-radio-button>
+		</mat-radio-group>
+		<div>
+			<mat-form-field *ngIf="c4 == 'true'">
+				<mat-label>Please explain</mat-label>
+				<input
+            matInput
+            placeholder="reason"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</div>
+
+		<p>5.     Have any of your employees ever been subject to investigation or prosecution related to bribery,
+			fraud, corruption, money laundering, anti-trust, etc.? </p>
+		<mat-radio-group [(ngModel)]="c5">
+			<mat-radio-button value="true">Yes</mat-radio-button>
+			<mat-radio-button value="false">No</mat-radio-button>
+		</mat-radio-group>
+		<div>
+			<mat-form-field *ngIf="c5 == 'true'">
+				<mat-label>Please explain</mat-label>
+				<input
+            matInput
+            placeholder="reason"
+            required
+          />
+				<mat-error> <strong>required</strong> </mat-error>
+			</mat-form-field>
+		</div>
+
 	</mat-step>
 	<mat-step state="Download Documents">
 		<p>Please Download the following document, fill it an upload it bellow</p>
@@ -174,10 +348,10 @@
 		<div>
 			<button mat-button (click)="stepper.reset()" *ngIf="checked">Send My Information</button>
 		</div>
-		<div>
+		<!-- <div>
 			<button mat-button matStepperPrevious>Back</button>
 			<button mat-button (click)="stepper.reset()">Reset</button>
-		</div>
+		</div> -->
 
 	</mat-step>
 
