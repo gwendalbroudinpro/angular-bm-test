@@ -2,7 +2,7 @@
   {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}} 
 </button>-->
 <mat-horizontal-stepper [linear]="false" #stepper labelPosition="bottom">
-  <!-- <mat-step [stepControl]="firstFormGroup" state="firstFormGroup">
+	<!-- <mat-step [stepControl]="firstFormGroup" state="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>
         Fill out your <br />
@@ -49,47 +49,57 @@
       </div>
     </form>
   </mat-step> -->
-  <mat-step state="Company Profile">
-    <ng-template matStepLabel>
-      Company Profile
-    </ng-template>
-    <h2>Company Profile</h2>
+	<mat-step state="Company Profile">
+		<ng-template matStepLabel>
+			Company Profile
+		</ng-template>
+		<h2>Company Profile</h2>
+		<mat-form-field>
+			<mat-label>First Name</mat-label>
+			<input
+            matInput
+            placeholder="Eric"
+            formControlName="firstCtrl"
+            required
+          />
+			<mat-error> First Name <strong>required</strong> </mat-error>
+		</mat-form-field>
 
-    
-  </mat-step>
-  <mat-step state="Company contact">
-    <ng-template matStepLabel>
-      Company contact
-    </ng-template>
-  </mat-step>
-  <mat-step state="Compliance">
-    <ng-template matStepLabel>
-      Compliance
-    </ng-template>
-  </mat-step>
-  <mat-step state="Download Documents">
-    <ng-template matStepLabel>
-      Download Documents
-    </ng-template>
+	</mat-step>
+	<mat-step state="Company contact">
+		<ng-template matStepLabel>
+			Company contact
+		</ng-template>
 
-    <mat-file-upload></mat-file-upload>
-  </mat-step>
+	</mat-step>
+	<mat-step state="Compliance">
+		<ng-template matStepLabel>
+			Compliance
+		</ng-template>
+	</mat-step>
+	<mat-step state="Download Documents">
+		<ng-template matStepLabel>
+			Download Documents
+		</ng-template>
 
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
+		<mat-file-upload></mat-file-upload>
+	</mat-step>
 
-  <ng-template matStepperIcon="firstFormGroup">
-    <mat-icon>face</mat-icon>
-  </ng-template>
-  <ng-template matStepperIcon="secondFormGroup">
-    <mat-icon>home</mat-icon>
-  </ng-template>
+	<mat-step>
+		<ng-template matStepLabel>Done</ng-template>
+		<p>You are now done.</p>
+		<div>
+			<button mat-button matStepperPrevious>Back</button>
+			<button mat-button (click)="stepper.reset()">Reset</button>
+		</div>
+	</mat-step>
+
+	<ng-template matStepperIcon="firstFormGroup">
+		<mat-icon>face</mat-icon>
+	</ng-template>
+	<ng-template matStepperIcon="secondFormGroup">
+		<mat-icon>home</mat-icon>
+	</ng-template>
 </mat-horizontal-stepper>
 
 <!-- Copyright 2020 Google LLC. All Rights Reserved.
