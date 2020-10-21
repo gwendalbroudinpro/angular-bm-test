@@ -2,11 +2,18 @@
   margin-top: 8px;
 }
 
-.mat-form-field {
-  margin-top: 16px;
-  margin-left: 16px;
-}
-
 mat-card {
   margin-bottom: 10px;
+  background-color: #fafafa;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.city {
+  display: flex;
+  flex-direction: row;
 }
