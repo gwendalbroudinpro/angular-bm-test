@@ -1,0 +1,97 @@
+<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+  {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}} 
+</button>-->
+<mat-horizontal-stepper [linear]="false" #stepper labelPosition="bottom">
+  <!-- <mat-step [stepControl]="firstFormGroup" state="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>
+        Fill out your <br />
+        personnal informations</ng-template
+      >
+
+      <div>
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input
+            matInput
+            placeholder="Eric"
+            formControlName="firstCtrl"
+            required
+          />
+          <mat-error> First Name <strong>required</strong> </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input
+            matInput
+            placeholder="Dupond"
+            formControlName="firstCtrl"
+            required
+          />
+          <mat-error> Last Name <strong>required</strong> </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="fill">
+          <input
+            matInput
+            placeholder="Dupond"
+            formControlName="firstCtrl"
+            required
+          />
+          <mat-label>Phone number</mat-label>
+          <mat-icon matSuffix>phone</mat-icon>
+          <mat-hint>Include area code</mat-hint>
+        </mat-form-field>
+      </div>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step> -->
+  <mat-step state="Company Profile">
+    <ng-template matStepLabel>
+      Company Profile
+    </ng-template>
+    <h2>Company Profile</h2>
+
+    
+  </mat-step>
+  <mat-step state="Company contact">
+    <ng-template matStepLabel>
+      Company contact
+    </ng-template>
+  </mat-step>
+  <mat-step state="Compliance">
+    <ng-template matStepLabel>
+      Compliance
+    </ng-template>
+  </mat-step>
+  <mat-step state="Download Documents">
+    <ng-template matStepLabel>
+      Download Documents
+    </ng-template>
+
+    <mat-file-upload></mat-file-upload>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+
+  <ng-template matStepperIcon="firstFormGroup">
+    <mat-icon>face</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="secondFormGroup">
+    <mat-icon>home</mat-icon>
+  </ng-template>
+</mat-horizontal-stepper>
+
+<!-- Copyright 2020 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->
