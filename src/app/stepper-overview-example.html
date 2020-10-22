@@ -1,143 +1,170 @@
 <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
   {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}} 
 </button>-->
-<mat-horizontal-stepper [linear]="false" #stepper labelPosition="bottom">
-  <mat-step state="Company Profile">
-    <ng-template matStepLabel>
-      Company Profile
-    </ng-template>
-    <h2>Company Profile</h2>
+<mat-horizontal-stepper [linear]="true" #stepper labelPosition="bottom">
+  <mat-step state="Company Profile" [stepControl]="CompanyProfile">
+    <form [formGroup]="CompanyProfile">
+      <ng-template matStepLabel>
+        Company Profile
+      </ng-template>
+      <h2>Company Profile</h2>
 
-    <mat-card>
-      <h4>SUPPLIER ID : MALEX20001</h4>
-      <h4>SUPPLIER NAME : ALEX 2000 SRL</h4>
-    </mat-card>
+      <mat-card>
+        <h4>SUPPLIER ID : MALEX20001</h4>
+        <h4>SUPPLIER NAME : ALEX 2000 SRL</h4>
+      </mat-card>
 
-    <mat-card class="main-form">
-      <h3>HEAD OFFICE</h3>
-      <mat-form-field>
-        <mat-label>ADDRESS 1</mat-label>
-        <input matInput placeholder="VIA PRAMPOLINI 7" required />
-        <mat-error> <strong>required</strong> </mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>ADDRESS 2</mat-label>
-        <input matInput placeholder="VIA PRAMPOLINI 7" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>ADDRESS 3</mat-label>
-        <input matInput placeholder="VIA PRAMPOLINI 7" />
-      </mat-form-field>
-      <div class="city">
+      <mat-card class="main-form">
+        <h3>HEAD OFFICE</h3>
         <mat-form-field>
-          <mat-label>CITY</mat-label>
-          <input matInput placeholder="BREST" />
+          <mat-label>ADDRESS 1</mat-label>
+          <input
+            matInput
+            placeholder="VIA PRAMPOLINI 7"
+            formControlName="address1"
+            required
+          />
+          <mat-error> <strong>required</strong> </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>ZIP CODE</mat-label>
-          <input matInput placeholder="29200" />
+          <mat-label>ADDRESS 2</mat-label>
+          <input matInput placeholder="VIA PRAMPOLINI 7" />
         </mat-form-field>
         <mat-form-field>
-          <mat-label>COUNTRY</mat-label>
-          <input matInput placeholder="FRANCE" />
+          <mat-label>ADDRESS 3</mat-label>
+          <input matInput placeholder="VIA PRAMPOLINI 7" />
         </mat-form-field>
-      </div>
-    </mat-card>
-
-    <mat-card class="main-form">
-      <h3>SUPPLY AND FINANCIAL INFORMATIONS</h3>
-      <div class="row">
-        <div class="column">
-          <mat-form-field appearance="fill">
-            <mat-label>INCOTERM</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">PORT DU</mat-option>
-            </mat-select>
+        <div class="city">
+          <mat-form-field>
+            <mat-label>CITY</mat-label>
+            <input
+              matInput
+              placeholder="BREST"
+              formControlName="city"
+              required
+            />
+            <mat-error> <strong>required</strong> </mat-error>
           </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>PLACE OF INCOTERM</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">FR Paris S W</mat-option>
-            </mat-select>
+          <mat-form-field>
+            <mat-label>ZIP CODE</mat-label>
+            <input
+              matInput
+              placeholder="29200"
+              formControlName="zipCode"
+              required
+            />
+            <mat-error> <strong>required</strong> </mat-error>
           </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>SOURCING ZONE</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">Europe Without France</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>PACKAGING</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">Flat Packed</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>MAIN PRODUCTION COUNTRY</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">ITALY</mat-option>
-            </mat-select>
+          <mat-form-field>
+            <mat-label>COUNTRY</mat-label>
+            <input
+              matInput
+              placeholder="FRANCE"
+              formControlName="country"
+              required
+            />
+            <mat-error> <strong>required</strong> </mat-error>
           </mat-form-field>
         </div>
-        <div class="column">
-          <mat-form-field appearance="fill">
-            <mat-label>PAYMENT METHOD</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">60 days time of delivery</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>PAYMENT METHOD</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">Transfer Europe</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>CURRENCY</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">EUR</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>COUNTRY OF BANK ACCOUNT</mat-label>
-            <mat-select [disabled]="true" value="option1">
-              <mat-option value="option1">Matrix Country</mat-option>
-            </mat-select>
-          </mat-form-field>
+      </mat-card>
+
+      <mat-card class="main-form">
+        <h3>SUPPLY AND FINANCIAL INFORMATIONS</h3>
+        <div class="row">
+          <div class="column">
+            <mat-form-field appearance="fill">
+              <mat-label>INCOTERM</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1">PORT DU</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>PLACE OF INCOTERM</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1">FR Paris S W</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>SOURCING ZONE</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1">Europe Without France</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>PACKAGING</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1">Flat Packed</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>MAIN PRODUCTION COUNTRY</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1">ITALY</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="column">
+            <mat-form-field appearance="fill">
+              <mat-label>PAYMENT METHOD</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1"
+                  >60 days time of delivery</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>PAYMENT METHOD</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1">Transfer Europe</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>CURRENCY</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1">EUR</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>COUNTRY OF BANK ACCOUNT</mat-label>
+              <mat-select [disabled]="true" value="option1">
+                <mat-option value="option1">Matrix Country</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
         </div>
-      </div>
-    </mat-card>
+      </mat-card>
 
-    <mat-card class="main-form">
-      <h3>CREATIVE / INDUSTRIAL</h3>
-      <mat-form-field appearance="fill">
-        <mat-select [disabled]="true" value="option1">
-          <mat-option value="option1">Creative</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card>
+      <mat-card class="main-form">
+        <h3>CREATIVE / INDUSTRIAL</h3>
+        <mat-form-field appearance="fill">
+          <mat-select [disabled]="true" value="option1">
+            <mat-option value="option1">Creative</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card>
 
-    <mat-card class="main-form">
-      <h3>SOURCING PARTNER</h3>
-      <mat-form-field appearance="fill">
-        <mat-label>BRAND AGENT / EBO NAME</mat-label>
-        <mat-select [disabled]="true" value="option1">
-          <mat-option value="option1">None</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>SUPPLIER AGENT COMPAGNY NAME</mat-label>
-        <mat-select [disabled]="true" value="option1">
-          <mat-option value="option1">None</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card>
+      <mat-card class="main-form">
+        <h3>SOURCING PARTNER</h3>
+        <mat-form-field appearance="fill">
+          <mat-label>BRAND AGENT / EBO NAME</mat-label>
+          <mat-select [disabled]="true" value="option1">
+            <mat-option value="option1">None</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>SUPPLIER AGENT COMPAGNY NAME</mat-label>
+          <mat-select [disabled]="true" value="option1">
+            <mat-option value="option1">None</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-card>
+    </form>
   </mat-step>
   <mat-step state="Company contact">
     <ng-template matStepLabel>
-      Company contact
+      Company Contact
     </ng-template>
-    <h2>Company contact</h2>
+    <h2>Company Contact</h2>
 
     <mat-card class="main-form">
       <h3>Administrative contact(s)</h3>
@@ -278,15 +305,25 @@
     </div>
   </mat-step>
   <mat-step state="Download Documents">
-    <p>Please Download the following document, fill it an upload it bellow</p>
-
     <ng-template matStepLabel>
       Download Documents
     </ng-template>
+    <p>Please Download the following document, fill it an upload it bellow</p>
+    <a href="http://www.edox.com/documents/RIB.pdf" target="_blank">
+      <img
+        src="https://www.hsbc.fr/1/PA_esf-ca-app-content/content/france/Aide-ma-banque/images/rib.jpg"
+        alt="RIB"
+      />
+    </a>
+
+    <br />
 
     <mat-file-upload
-      [labelText]="'Upload your file here'"
+      [labelText]="''"
+      [selectButtonText]="'Upload your financial document here'"
       [uploadButtonText]="'Submit'"
+      [allowMultipleFiles]="false"
+      [acceptedTypes]="'.pdf'"
     >
     </mat-file-upload>
   </mat-step>

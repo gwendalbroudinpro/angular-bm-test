@@ -33,7 +33,11 @@ mat-card {
 
 .city > * {
   flex-grow: 1;
-  display: flex;
+  margin-left: 10px;
+}
+
+.city > *:first-child {
+  margin-left: 0;
 }
 
 .row {

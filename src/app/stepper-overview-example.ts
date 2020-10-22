@@ -11,7 +11,10 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 })
 export class StepperOverviewExample implements OnInit {
   isLinear = false;
-  firstFormGroup: FormGroup;
+  CompanyProfile: FormGroup;
+  CompanyContact: FormGroup;
+  Compliance: FormGroup;
+  DownloadDocuments: FormGroup;
   secondFormGroup: FormGroup;
   finance: FormGroup;
   checked: boolean;
@@ -23,8 +26,11 @@ export class StepperOverviewExample implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ["", Validators.required]
+    this.CompanyProfile = this._formBuilder.group({
+      address1: ["", Validators.required],
+      city: ["", Validators.required],
+      zipCode: ["", Validators.required],
+      country: ["", Validators.required]
     });
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ["", Validators.required]
@@ -32,6 +38,10 @@ export class StepperOverviewExample implements OnInit {
     this.finance = this._formBuilder.group({
       secondCtrl: ["", Validators.required]
     });
+  }
+
+  geterror(group: FormGroup, propName: string): string {
+    return "";
   }
 }
 
